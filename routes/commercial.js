@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const Commercial = require("../models/commercial");
+const Commercial = require("../model/commercial");
 //setting the 4 crud operations for commercial(get,post,update,delete)
 //get
 //We would get all thr commercial in our database and would send them all as a response
 router.get("", function (req, res, next) {
-  Bot1.find({})
+  Commercial.find({})
     .then(function (commercial) {
       res.send(commercial);
     })
@@ -23,3 +23,4 @@ router.post("/:admin", function (req, res, next) {
     })
     .catch(next);
 });
+module.exports = router;
